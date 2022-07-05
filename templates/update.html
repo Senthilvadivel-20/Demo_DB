@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>
+            IPL PLAYERS
+        </title>
+    </head>
+
+    <body>
+
+        <h1>IPL PLAYERS DATA BASE</h1>
+
+        <form enctype="multipart/form-data" method="POST">
+
+            {% csrf_token %}
+
+            <label for="name">Enter Name:</label>
+            <input type="text" required name="name" value={{data.Name}}>
+
+            <br>
+            <label for="team">Enter Team Name:</label>
+            <input type="text" required name="team" value="{{data.Team}}">
+            <br>
+
+            <label for="no">Jersey Number:</label>
+            <input type="number" required name="no" value="{{data.No}}">
+            <br>
+
+            <label for="image">Upload Image</label>
+            <a href="{{data.Image.url}}" _target="blank">View Image</a>
+            <input type="file"  name="image">
+            <br>
+
+            <input type="submit" value="Submit">
+
+        </form>
+
+    </body>
+
+
+
+</html>

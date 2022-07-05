@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>
+            IPL PLAYERS
+        </title>
+    </head>
+
+    <body>
+
+        <h1>IPL PLAYERS DATA BASE</h1>
+
+        <form enctype="multipart/form-data" method="POST">
+
+            {% csrf_token %}
+
+            <label for="name">Enter Name:</label>
+            <input type="text" required name="name">
+
+            <br>
+            <label for="team">Enter Team Name:</label>
+            <input type="text" required name="team">
+            <br>
+
+            <label for="no">Jersey Number:</label>
+            <input type="number" required name="no">
+            <br>
+
+            <label for="image">Upload Image</label>
+            <input type="file" required name="image">
+            <br>
+
+
+            <input type="submit" value="Submit">
+
+        </form>
+
+    </body>
+
+
+    <!-- Show The Player Data Base -->
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Team</th>
+                <th>Jersey No</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            {% for i in data %}
+
+            <tr>
+                <td> <a href="{{i.Image.url}}" __target="blank"> <img src="{{i.Image.url}}" width="110" height="80"/> </a> </td>
+                <td>{{i.Name}}</td>
+                <td>{{i.Team}}</td>
+                <td>{{i.No}}</td>
+                <td><a href="update/{{i.id}}">update</a></td>
+                <td><a href="delete/{{i.id}}">Delete</a></td>
+                <td><a href="player/{{i.id}}">view</a></td>
+            </tr>
+
+            {% endfor %}
+        </tbody>
+
+    </table>
+
+
+    <a href="table">See table</a>
+
+
+</html>

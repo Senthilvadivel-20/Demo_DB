@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>
+            IPL PLAYERS
+        </title>
+    </head>
+
+    <style>
+
+        body{
+            text-align: center;
+        }
+        table{
+            text-align: center;
+            margin-left: 34%;
+        }
+
+    </style>
+
+    <body>
+
+        <h1>IPL PLAYERS DATA BASE</h1>
+
+        <form action="table" method="POST">
+            {% csrf_token %}
+
+            <label>Search Player</label>
+            <input type="text" name="search" required` placeholder="search player">
+            <br>
+            <br>
+            <input type="submit" value="search">
+
+        </form>
+
+    <!-- Show The Player Data Base -->
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Team</th>
+                    <th>Jersey No</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                {% for i in data %}
+
+                <tr>
+                    <td> <a href="{{i.Image.url}}" __target="blank"> <img src="{{i.Image.url}}" width="110" height="80"/> </a> </td>
+                    <td>{{i.Name}}</td>
+                    <td>{{i.Team}}</td>
+                    <td>{{i.No}}</td>
+                    <td><a href="update/{{i.id}}">update</a></td>
+                    <td><a href="delete/{{i.id}}">Delete</a></td>
+                </tr>
+
+                {% endfor %}    
+                
+            </tbody>
+
+        </table>
+
+    </body>
+
+</html>

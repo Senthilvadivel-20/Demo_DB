@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>
+            {{name}} Details
+        </title>
+    </head>
+
+    <style>
+        h1{
+            text-align: center;
+        }
+    </style>
+
+    <body>
+
+         <h1>{{name}}</h1>    
+
+         <h3>Total Score {{obj.total_runs}}</h3>
+         <h4>Ball faced {{obj.ball_faced}}</h4>
+
+         <table>
+
+            <thead>
+                <tr>
+                    <th>Runs type</th>
+                    <th>No of</th>
+                    <th>Runs Scored</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <th>One</th>
+                    <td>{{obj.dot}}</td>
+                    <td>0</td>
+                </tr>
+
+                <tr>
+                    <th>One</th>
+                    <td>{{obj.once}}</td>
+                    <td>{{obj.single_runs}}</td>
+                </tr>
+
+                <tr>
+                    <th>Two</th>
+                    <td>{{obj.two}}</td>
+                    <td>{{obj.two_runs}}</td>
+                </tr>
+
+                <tr>
+                    <th>Three</th>
+                    <td>{{obj.three}}</td>
+                    <td>{{obj.three_runs}}</td>
+                </tr>
+
+                <tr>
+                    <th>Foue</th>
+                    <td>{{obj.four}}</td>
+                    <td>{{obj.four_runs}}</td>
+                </tr>
+
+                <tr>
+                    <th>Five</th>
+                    <td>{{obj.five}}</td>
+                    <td>{{obj.five_runs}}</td>
+                </tr>
+
+                <tr>
+                    <th>Six</th>
+                    <td>{{obj.six}}</td>
+                    <td>{{obj.six_runs}}</td>
+                </tr>
+
+            </tbody>
+
+         </table>
+
+        
+    </body>
+
+</html>
